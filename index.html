@@ -20,6 +20,9 @@
             --transition: all 0.3s ease;
             --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             --box-shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.2);
+            --dark-bg: #121212;
+            --dark-text: #e0e0e0;
+            --dark-card: #1e1e1e;
         }
 
         * {
@@ -38,6 +41,12 @@
             color: var(--text-color);
             background-color: var(--white);
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.dark-mode {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
         }
 
         a {
@@ -74,6 +83,10 @@
             color: var(--dark-color);
         }
 
+        .dark-mode .section-title {
+            color: var(--dark-text);
+        }
+
         .section-title::after {
             content: '';
             position: absolute;
@@ -91,6 +104,10 @@
             max-width: 700px;
             margin: 0 auto 50px;
             color: var(--text-light);
+        }
+
+        .dark-mode .section-subtitle {
+            color: rgba(224, 224, 224, 0.7);
         }
 
         .btn {
@@ -141,6 +158,11 @@
             transition: var(--transition);
         }
 
+        .dark-mode header {
+            background-color: rgba(30, 30, 30, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
         .header-container {
             display: flex;
             justify-content: space-between;
@@ -177,6 +199,10 @@
             transition: var(--transition);
         }
 
+        .dark-mode .nav-list a {
+            color: var(--dark-text);
+        }
+
         .nav-list a::after {
             content: '';
             position: absolute;
@@ -211,6 +237,25 @@
             transition: var(--transition);
         }
 
+        .dark-mode .bar {
+            background-color: var(--dark-text);
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color);
+            margin-left: 20px;
+            transition: var(--transition);
+        }
+
+        .dark-mode .theme-toggle {
+            color: var(--dark-text);
+        }
+
         /* Hero Section */
         .hero {
             height: 100vh;
@@ -220,6 +265,11 @@
                         url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
             text-align: center;
             position: relative;
+        }
+
+        .dark-mode .hero {
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.9) 0%, rgba(30, 30, 30, 0.9) 100%), 
+                        url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
         }
 
         .hero-content {
@@ -250,6 +300,10 @@
             line-height: 1.2;
         }
 
+        .dark-mode .hero-title {
+            color: var(--dark-text);
+        }
+
         .hero-title span {
             color: var(--primary-color);
             position: relative;
@@ -270,6 +324,10 @@
             font-size: 1.3rem;
             margin-bottom: 2rem;
             color: var(--text-light);
+        }
+
+        .dark-mode .hero-subtitle {
+            color: rgba(224, 224, 224, 0.7);
         }
 
         .hero-buttons {
@@ -319,6 +377,10 @@
             animation: bounce 2s infinite;
         }
 
+        .dark-mode .scroll-down {
+            color: var(--dark-text);
+        }
+
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
                 transform: translateY(0) translateX(-50%);
@@ -334,6 +396,10 @@
         /* About Section */
         .about {
             background-color: var(--light-color);
+        }
+
+        .dark-mode .about {
+            background-color: var(--dark-bg);
         }
 
         .about-container {
@@ -360,6 +426,10 @@
             text-align: justify;
         }
 
+        .dark-mode .about-content p {
+            color: var(--dark-text);
+        }
+
         .about-skills {
             margin-top: 2rem;
         }
@@ -378,6 +448,10 @@
             font-weight: 600;
         }
 
+        .dark-mode .skill-name {
+            color: var(--dark-text);
+        }
+
         .skill-percent {
             color: var(--primary-color);
         }
@@ -387,6 +461,10 @@
             background-color: #e9ecef;
             border-radius: 4px;
             overflow: hidden;
+        }
+
+        .dark-mode .progress-bar {
+            background-color: #333;
         }
 
         .progress {
@@ -400,6 +478,10 @@
         /* Skills Section */
         .skills {
             background-color: var(--white);
+        }
+
+        .dark-mode .skills {
+            background-color: var(--dark-bg);
         }
 
         .skills-container {
@@ -419,6 +501,10 @@
             transform: translateY(20px);
         }
 
+        .dark-mode .skill-card {
+            background-color: var(--dark-card);
+        }
+
         .skill-card.show {
             opacity: 1;
             transform: translateY(0);
@@ -435,14 +521,26 @@
             margin-bottom: 1rem;
         }
 
+        .dark-mode .skill-title {
+            color: var(--dark-text);
+        }
+
         .skill-desc {
             color: var(--text-light);
             font-size: 0.9rem;
         }
 
+        .dark-mode .skill-desc {
+            color: rgba(224, 224, 224, 0.7);
+        }
+
         /* Projects Section */
         .projects {
             background-color: var(--light-color);
+        }
+
+        .dark-mode .projects {
+            background-color: var(--dark-bg);
         }
 
         .projects-filter {
@@ -483,6 +581,10 @@
             transition: var(--transition);
             opacity: 0;
             transform: translateY(20px);
+        }
+
+        .dark-mode .project-card {
+            background-color: var(--dark-card);
         }
 
         .project-card.show {
@@ -558,6 +660,10 @@
             margin-bottom: 0.5rem;
         }
 
+        .dark-mode .project-title {
+            color: var(--dark-text);
+        }
+
         .project-category {
             color: var(--primary-color);
             font-size: 0.9rem;
@@ -570,9 +676,17 @@
             margin-bottom: 1.5rem;
         }
 
+        .dark-mode .project-desc {
+            color: rgba(224, 224, 224, 0.7);
+        }
+
         /* Contact Section */
         .contact {
             background-color: var(--white);
+        }
+
+        .dark-mode .contact {
+            background-color: var(--dark-bg);
         }
 
         .contact-container {
@@ -610,8 +724,16 @@
             margin-bottom: 0.3rem;
         }
 
+        .dark-mode .contact-text h3 {
+            color: var(--dark-text);
+        }
+
         .contact-text p {
             color: var(--text-light);
+        }
+
+        .dark-mode .contact-text p {
+            color: rgba(224, 224, 224, 0.7);
         }
 
         .contact-form .form-group {
@@ -624,6 +746,10 @@
             font-weight: 600;
         }
 
+        .dark-mode .contact-form label {
+            color: var(--dark-text);
+        }
+
         .contact-form input,
         .contact-form textarea {
             width: 100%;
@@ -632,6 +758,15 @@
             border-radius: 5px;
             font-family: inherit;
             transition: var(--transition);
+            background-color: var(--white);
+            color: var(--text-color);
+        }
+
+        .dark-mode .contact-form input,
+        .dark-mode .contact-form textarea {
+            background-color: var(--dark-card);
+            border-color: #444;
+            color: var(--dark-text);
         }
 
         .contact-form input:focus,
@@ -656,6 +791,10 @@
             color: var(--white);
             text-align: center;
             padding: 30px 0;
+        }
+
+        .dark-mode footer {
+            background-color: #111;
         }
 
         .footer-content {
@@ -715,6 +854,11 @@
             font-size: 0.9rem;
         }
 
+        .cta-button {
+            margin-top: 30px;
+            text-align: center;
+        }
+
         /* Back to Top Button */
         .back-to-top {
             position: fixed;
@@ -744,6 +888,22 @@
         .back-to-top:hover {
             background-color: var(--secondary-color);
             transform: translateY(-5px);
+        }
+
+        /* Watermark */
+        .watermark {
+            position: relative;
+        }
+
+        .watermark::after {
+            content: "Dicky Prawira";
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 1.5rem;
+            font-weight: bold;
+            pointer-events: none;
         }
 
         /* Responsive Styles */
@@ -803,6 +963,10 @@
                 justify-content: center;
                 transition: var(--transition);
                 box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .dark-mode .nav-list {
+                background-color: var(--dark-card);
             }
 
             .nav-list.active {
@@ -881,6 +1045,11 @@
                 <li><a href="#skills">Keahlian</a></li>
                 <li><a href="#projects">Proyek</a></li>
                 <li><a href="#contact">Kontak</a></li>
+                <li>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
             </ul>
         </nav>
     </div>
@@ -889,12 +1058,12 @@
 <section id="hero" class="hero">
     <div class="container">
         <div class="hero-content">
-            <img src="ptrl.jpg" alt="Foto Profil Dicky Prawira" class="profile-pic animate__animated animate__fadeIn">
+            <img src="ptrl.jpg" alt="Foto Profil Dicky Prawira" class="profile-pic animate__animated animate__fadeIn watermark">
             <h1 class="hero-title animate__animated animate__fadeInUp">Halo, saya <span>Dicky Prawira</span></h1>
             <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">Seorang <strong>Mahasiswa IT</strong> yang bersemangat dalam menciptakan solusi digital yang inovatif dan efisien.</p>
             <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-2s">
                 <a href="#projects" class="btn btn-primary">Lihat Proyek Saya</a>
-                <a href="#" class="btn btn-secondary">Unduh CV</a>
+                <a href="#contact" class="btn btn-secondary">Hubungi Saya</a>
             </div>
         </div>
     </div>
@@ -914,7 +1083,7 @@
         <p class="section-subtitle">Mari berkenalan lebih jauh dengan saya</p>
         
         <div class="about-container">
-            <div class="about-img">
+            <div class="about-img watermark">
                 <img src="ptrl.jpg" alt="Dicky Prawira">
             </div>
             
@@ -965,6 +1134,10 @@
                             <div class="progress" style="width: 85%"></div>
                         </div>
                     </div>
+                </div>
+
+                <div class="cta-button">
+                    <a href="https://linkedin.com/in/dicky-prawira-901999242/" class="btn btn-primary" target="_blank">Hubungi Saya di LinkedIn</a>
                 </div>
             </div>
         </div>
@@ -1030,7 +1203,7 @@
         
         <div class="projects-grid">
             <div class="project-card" data-category="web">
-                <div class="project-img">
+                <div class="project-img watermark">
                     <img src="https://via.placeholder.com/600x400" alt="Website E-commerce">
                     <div class="project-overlay">
                         <div class="project-links">
@@ -1046,113 +1219,4 @@
                 </div>
             </div>
             
-            <div class="project-card" data-category="app">
-                <div class="project-img">
-                    <img src="https://via.placeholder.com/600x400" alt="Aplikasi To-Do List">
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            <a href="#" class="project-link" title="Demo"><i class="fas fa-eye"></i></a>
-                            <a href="https://github.com/DIKDUY" class="project-link" title="Kode Sumber"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Aplikasi To-Do List</h3>
-                    <span class="project-category">Aplikasi</span>
-                    <p class="project-desc">Aplikasi To-Do List interaktif yang memungkinkan pengguna menambah, menghapus, dan menandai tugas sebagai selesai, dibuat dengan JavaScript.</p>
-                </div>
-            </div>
-            
-            <div class="project-card" data-category="design">
-                <div class="project-img">
-                    <img src="https://via.placeholder.com/600x400" alt="Desain UI/UX">
-                    <div class="project-overlay">
-                        <div class="project-links">
-                            <a href="#" class="project-link" title="Demo"><i class="fas fa-eye"></i></a>
-                            <a href="https://github.com/DIKDUY" class="project-link" title="Kode Sumber"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Desain UI/UX Aplikasi</h3>
-                    <span class="project-category">Desain</span>
-                    <p class="project-desc">Desain antarmuka pengguna untuk aplikasi mobile dengan fokus pada pengalaman pengguna yang intuitif dan menarik.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="contact section">
-    <div class="container">
-        <h2 class="section-title">Kontak</h2>
-        <p class="section-subtitle">Hubungi saya untuk kolaborasi atau sekedar menyapa</p>
-        
-        <div class="contact-container">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="contact-text">
-                        <h3>Lokasi</h3>
-                        <p>Tangerang, Banten, Indonesia</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="contact-text">
-                        <h3>Email</h3>
-                        <p>prawiradicky058@example.com</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <div class="contact-text">
-                        <h3>Telepon</h3>
-                        <p>0812-8795-8206</p>
-                    </div>
-                </div>
-            </div>
-            
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <label for="name">Nama Lengkap</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Alamat Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="subject">Subjek</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Pesan Anda</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                
-                <button type="submit" class="btn btn-primary form-submit">Kirim Pesan</button>
-            </form>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <div class="container">
-        <div class="footer-content">
-            <a href="#" class="footer-logo"><i class="fas fa-code"></i> Dicky Prawira</a>
-            
-            <ul class="footer-links">
-                <li><a href="#hero" class="footer-link">Beranda</a></li>
-                <li><a href="#about" class="footer-link
+            <div class="
